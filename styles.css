@@ -1,0 +1,269 @@
+/* apply box sizing and font family across */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Varela Round", sans-serif;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  background: #904e95;
+}
+
+/* provide certain variables to use later on */
+:root {
+  --field__background: #fdfdfd;
+  --field__hover: rgb(253, 226, 251);
+  --input__border--hover: rgba(0, 0, 0, 0.62);
+  --label__color: rgb(75, 74, 74);
+  --font__size: 16px;
+}
+
+main {
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: x-large;
+  color: white;
+  margin: 15px auto;
+}
+
+form {
+  position: relative;
+  border-radius: 10px;
+  background-color: #2e093a;
+  padding: 1.8rem;
+  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating {
+  margin-bottom: 1.4rem;
+  width: 300px; /* change this for smaller screens */
+  background-color: var(--field__background);
+  border-radius: 5px;
+  position: relative;
+}
+
+.floating:hover,
+.floating:focus-within,
+select:hover {
+  background-color: var(--field__hover);
+}
+
+span {
+  position: absolute;
+  color: #333;
+  height: 100%;
+  left: 250px;
+  text-align: center; /* these two might not even be used! */
+  width: 20px;
+}
+
+span > i {
+  padding-left: 5px;
+  padding-top: 15px;
+  font-size: 30px;
+}
+
+input {
+  background: none;
+  outline: none;
+  border-width: 0;
+}
+
+.floating-input {
+  padding: 1.8rem 1rem 0.6rem;
+  width: 100%; /* you can get rid off it */
+  border-radius: 5px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+  box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+}
+
+.floating-input::placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+.floating-input:placeholder-shown + .floating__label::before {
+  transform: translate3d(0, -2.5rem, 0) scale3d(1, 1, 1);
+}
+
+.floating__label::before,
+.floating-input:focus + .floating__label::before {
+  transform: translate3d(9rem, -3.12rem, 0) scale3d(0.82, 0.82, 1);
+}
+
+.floating__label {
+  display: block;
+  position: relative;
+  max-height: 0;
+  pointer-events: none;
+}
+
+.floating__label::before {
+  color: var(--label__color);
+  content: attr(data-content);
+  display: inline-block;
+  filter: blur(5);
+  backface-visibility: hidden;
+  transform-origin: left top;
+  transition: transform 0.2s ease;
+  left: 1rem;
+  position: relative;
+}
+
+.floating__label::after {
+  bottom: 1rem;
+  content: "";
+  height: 0.1rem;
+  position: absolute;
+  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+  opacity: 0;
+  left: 0;
+  top: 100%;
+  margin-top: -0.1rem;
+  transform: scale3d(0, 1, 1);
+  width: 100%;
+  background-color: var(--color__accent);
+}
+
+label {
+  color: #4d4d4d;
+  font-size: 0.9rem;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 5px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* Select field */
+
+.select-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 4px 18px;
+  font-size: 14px;
+  line-height: 1;
+  border: none;
+  border-radius: 5px;
+  height: 3.2rem;
+  outline: none;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right rgb(255, 255, 255);
+  -webkit-appearance: none;
+  background-position-x: 260px;
+}
+
+/* Date picker */
+
+.delivery-date {
+  height: 3.2rem;
+  left: 17px;
+}
+
+input[type="date"] {
+  position: relative;
+}
+
+/* add a new icon */
+
+input[type="date"]:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: 146px;
+  content: "\f073";
+  color: #555;
+  padding: 0 5px;
+  /* left: 165.15px; */
+  display: block;
+  orientation: initial;
+  float: right;
+}
+
+/* make the native icon invisible and stretch it over the whole field so it can be clicked on anywhere in the input field to trigger the datepicker */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+
+/* Submit button */
+
+button {
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px;
+  background-color: #904e95;
+  padding: 5px;
+  color: white;
+  display: block;
+  width: 100%;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+/* Media queries */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  form {
+    padding: 2.3rem;
+  }
+
+  .floating {
+    margin-bottom: 1.4rem;
+    width: 400px;
+  }
+
+  span {
+    left: 350px;
+  }
+
+  select {
+    background-position-x: 363px;
+  }
+
+  input[type="date"]:after {
+    margin-left: 248px;
+  }
+
+  .floating-input:placeholder-shown + .floating__label::before {
+    transform: translate3d(0, -2.5rem, 0) scale3d(1, 1, 1);
+  }
+
+  .floating__label::before,
+  .floating-input:focus + .floating__label::before {
+    transform: translate3d(15rem, -3.12rem, 0) scale3d(0.82, 0.82, 1);
+  }
+}

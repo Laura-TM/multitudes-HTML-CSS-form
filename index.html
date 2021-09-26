@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <meta name="author" content="Laura Menendez" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <!-- Tab Icon -->
+    <link rel="icon" type="image" href="favicon.png" sizes="16x16" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Load font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+
+    <title>Form controls</title>
+  </head>
+  <body>
+    <main>
+      <h1>Get your t-shirt!</h1>
+      <!-- Form Wrapper -->
+      <form
+        name="shirt-form"
+        id="shirtForm"
+        class="floating-form"
+        method="POST"
+        role="form"
+      >
+        <!-- If they had set up a username, perhaps those could be used instead -->
+        <div class="floating">
+          <span
+            ><i aria-hidden="true" class="large material-icons"
+              >account_circle</i
+            ></span
+          >
+          <input
+            id="input__firstName"
+            class="floating-input"
+            name="firstName"
+            type="text"
+            minlength="2"
+            maxlength="20"
+            pattern="[A-Za-z]{1,20}"
+            required
+            placeholder="First name"
+          />
+          <label
+            for="input__firstName"
+            class="floating__label"
+            data-content="First name"
+          >
+          </label>
+        </div>
+
+        <div class="floating">
+          <span
+            ><i aria-hidden="true" class="large material-icons"
+              >person_add</i
+            ></span
+          >
+          <input
+            id="input__lastName"
+            class="floating-input"
+            name="lastName"
+            type="text"
+            minlength="2"
+            maxlength="30"
+            pattern="[A-Za-z]{1,30}"
+            required
+            placeholder="Last name"
+          />
+          <label
+            for="input__lastName"
+            class="floating__label"
+            data-content="Last name"
+          >
+          </label>
+        </div>
+
+        <div class="floating">
+          <span
+            ><i aria-hidden="true" class="medium material-icons">email</i></span
+          >
+          <input
+            id="input__emailAddress "
+            class="floating-input"
+            name="emailAddress"
+            type="email"
+            minlength="3"
+            maxlength="40"
+            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+            required
+            placeholder="Email address"
+          />
+          <label
+            for="input__emailAddress"
+            class="floating__label"
+            data-content="Email address"
+          >
+          </label>
+        </div>
+
+        <div class="floating">
+          <div class="select-container">
+            <select
+              id="input__selectColours"
+              onclick="this.setAttribute('value', this.value);"
+              value=""
+              name="selectColours"
+              type="select"
+              required
+              placeholder="Select a colour"
+            >
+              <option value="">Select a colour</option>
+              <option value="Blue">Blue</option>
+              <option value="White">White</option>
+              <option value="Mauve">Mauve</option>
+            </select>
+            <label for="input__selectColours" class="select-label"></label>
+          </div>
+        </div>
+
+        <div class="floating">
+          <input
+            type="date"
+            name="dateofdelivery"
+            id="dateofdelivery"
+            class="delivery-date"
+            min="2021-09-25"
+            max="2021-12-25"
+            required
+          />
+          <label for="dateofdelivery"> </label>
+        </div>
+
+        <!-- <div>
+ 
+        </div> -->
+
+        <!-- Submitting -->
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
