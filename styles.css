@@ -192,7 +192,7 @@ select {
 
 input[type="date"]:after {
   font-weight: 900;
-  margin-left: 135px;
+  margin-left: 145px;
   content: "\1F5D2";
   color: rgb(0, 0, 0);
   padding: 0 5px;
