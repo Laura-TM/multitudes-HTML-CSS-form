@@ -6,7 +6,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Verdana", sans-serif;
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */
@@ -35,6 +35,7 @@ main {
 h1 {
   text-transform: uppercase;
   font-size: x-large;
+  font-weight: 200;
   color: white;
   margin: 15px auto;
 }
@@ -50,7 +51,7 @@ form {
 
 .floating {
   margin-bottom: 1.4rem;
-  width: 300px; /* change this for smaller screens */
+  width: 300px;
   background-color: var(--field__background);
   border-radius: 5px;
   position: relative;
@@ -67,14 +68,21 @@ span {
   color: #333;
   height: 100%;
   left: 250px;
-  text-align: center; /* these two might not even be used! */
-  width: 20px;
+  text-align: center;
+  width: 50px;
+  padding: 5px;
+  margin: auto 0;
+  font-size: 20px;
 }
 
-span > i {
-  padding-left: 5px;
-  padding-top: 15px;
-  font-size: 30px;
+.emailIcon {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.selectIcon {
+  font-size: 25px;
+  padding-top: 6px;
 }
 
 input {
@@ -85,7 +93,7 @@ input {
 
 .floating-input {
   padding: 1.8rem 1rem 0.6rem;
-  width: 100%; /* you can get rid off it */
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -171,10 +179,7 @@ select {
   border-radius: 5px;
   height: 3.2rem;
   outline: none;
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
-    no-repeat right rgb(255, 255, 255);
   -webkit-appearance: none;
-  background-position-x: 260px;
 }
 
 /* Date picker */
@@ -182,25 +187,19 @@ select {
 .delivery-date {
   height: 3.2rem;
   left: 17px;
-}
-
-input[type="date"] {
   position: relative;
 }
 
 /* add a new icon */
 
 input[type="date"]:after {
-  font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  margin-left: 146px;
-  content: "\f073";
-  color: #555;
+  margin-left: 135px;
+  content: "\1F5D2";
+  color: rgb(0, 0, 0);
   padding: 0 5px;
-  /* left: 165.15px; */
+  left: 165.15px;
   display: block;
-  orientation: initial;
-  float: right;
 }
 
 /* make the native icon invisible and stretch it over the whole field so it can be clicked on anywhere in the input field to trigger the datepicker */
@@ -235,7 +234,6 @@ button {
 
 /* Media queries */
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   form {
     padding: 2.3rem;

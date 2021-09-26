@@ -12,23 +12,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <!-- Tab Icon -->
     <link rel="icon" type="image" href="favicon.png" sizes="16x16" />
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Icons -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- Load font awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-    />
 
     <title>Form controls</title>
   </head>
@@ -45,11 +28,7 @@
       >
         <!-- If they had set up a username, perhaps those could be used instead -->
         <div class="floating">
-          <span
-            ><i aria-hidden="true" class="large material-icons"
-              >account_circle</i
-            ></span
-          >
+          <span class="nameIcon">&#129489;</span>
           <input
             id="input__firstName"
             class="floating-input"
@@ -70,11 +49,7 @@
         </div>
 
         <div class="floating">
-          <span
-            ><i aria-hidden="true" class="large material-icons"
-              >person_add</i
-            ></span
-          >
+          <span class="nameIcon">&#129489;</span>
           <input
             id="input__lastName"
             class="floating-input"
@@ -95,9 +70,7 @@
         </div>
 
         <div class="floating">
-          <span
-            ><i aria-hidden="true" class="medium material-icons">email</i></span
-          >
+          <span class="emailIcon">&#9993;</span>
           <input
             id="input__emailAddress "
             class="floating-input"
@@ -119,6 +92,7 @@
 
         <div class="floating">
           <div class="select-container">
+            <span class="selectIcon">&#8964;</span>
             <select
               id="input__selectColours"
               onclick="this.setAttribute('value', this.value);"
@@ -149,10 +123,6 @@
           />
           <label for="dateofdelivery"> </label>
         </div>
-
-        <!-- <div>
- 
-        </div> -->
 
         <!-- Submitting -->
         <div>
